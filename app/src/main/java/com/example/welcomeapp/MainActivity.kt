@@ -1,40 +1,21 @@
-package com.example.welcomeapp
+package com.example.welcomeapp.data
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
-
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Search
-
-import androidx.compose.material3.*
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-
-import com.example.welcomeapp.data.StudentDataProvider
+import com.example.welcomeapp.R
 import com.example.welcomeapp.model.Student
-import com.example.welcomeapp.ui.theme.NdejjeWelcomeAppTheme
 
 
+object StudentDataProvider {
 
-class MainActivity : ComponentActivity() {
-
+    val students: List<Student> = listOf(
+        Student(1,  "Akello Stellamaris", "24/2/314/01", "BIT", R.drawable.emma,  2, true),
+        Student(2,  "Kirya James",        "24/2/314/02", "BCS", R.drawable.emma,    2, false),
+        Student(3,  "Mbabazi Joan",       "24/2/314/03", "BIT", R.drawable.emma,  2, true),
+        Student(4,  "Kato Johnmary",      "24/2/314/04", "BSE", R.drawable.emma,    2, true),
+        Student(5,  "Namukasa Ritah",     "24/2/314/05", "BIT", R.drawable.emma,  2, true),
+        Student(6,  "Ssemakula Peter",    "24/2/314/06", "BCS", R.drawable.emma,    2, false),
+        Student(7,  "Namutebi Grace",     "24/2/314/07", "BSE", R.drawable.emma,  2, true),
+        Student(8,  "Lwanga Daniel",      "24/2/314/08", "BIT", R.drawable.emma,    2, false),
+        Student(9,  "Atuhaire Brenda",    "24/2/314/09", "BCS", R.drawable.emma,  2, true),
+        Student(10, "Mugisha Kevin",      "24/2/314/10", "BSE", R.drawable.emma,    2, true)
+    )
 }

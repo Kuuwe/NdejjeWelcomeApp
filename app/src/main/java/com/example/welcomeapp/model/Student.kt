@@ -1,11 +1,11 @@
-// com/example/welcomeapp/model/Student.kt
 package com.example.welcomeapp.model
 
 data class Student(
     val id: Int,
     val name: String,
     val regNo: String,
-    val course: String,
-    val photoRes: Int,
-    val isVerified: Boolean = true
+    val programme: String,
+    val photoRes: Int,          // R.drawable integer ID
+    val yearOfStudy: Int,       // NEW: shows year on card
+    val isVerified: Boolean = false
 )
