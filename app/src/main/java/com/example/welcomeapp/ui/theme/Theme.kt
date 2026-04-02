@@ -7,32 +7,25 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.Color          // ← THIS fixes Color.White
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
-import androidx.core.view.WindowCompat
+import androidx.core.view.WindowCompat             // ← THIS fixes WindowCompat
 
-/**
- * lightColorScheme and darkColorScheme map your named colours
- * to Material 3 semantic roles (primary, error, surface, etc.).
- *
- * Every composable that calls MaterialTheme.colorScheme.primary
- * will automatically get NdejjeBlue in light mode and
- * NdejjeLightBlue in dark mode — no manual checks needed.
- */
 private val LightColors = lightColorScheme(
-    primary        = NdejjeBlue,
-    onPrimary      = Color.White,
-    secondary      = NdejjeGold,
-    error          = AbsentRed,
-    surface        = SurfaceLight,
+    primary   = NdejjeBlue,
+    onPrimary = Color.White,       // now resolved ✓
+    secondary = NdejjeGold,
+    error     = AbsentRed,
+    surface   = SurfaceLight,
 )
 
 private val DarkColors = darkColorScheme(
-    primary        = NdejjeLightBlue,
-    onPrimary      = Color.White,
-    secondary      = NdejjeGold,
-    error          = AbsentRed,
-    surface        = SurfaceDark,
+    primary   = NdejjeLightBlue,
+    onPrimary = Color.White,       // now resolved ✓
+    secondary = NdejjeGold,
+    error     = AbsentRed,
+    surface   = SurfaceDark,
 )
 
 @Composable
@@ -42,7 +35,6 @@ fun NdejjeWelcomeAppTheme(
 ) {
     val colorScheme = if (darkTheme) DarkColors else LightColors
 
-    // Tint the system status bar to match the primary colour
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {

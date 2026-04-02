@@ -1,21 +1,28 @@
-package com.example.welcomeapp.data
+package com.example.welcomeapp
 
-import com.example.welcomeapp.R
-import com.example.welcomeapp.model.Student
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import com.example.welcomeapp.ui.screen.AttendanceScreen
+import com.example.welcomeapp.ui.theme.NdejjeWelcomeAppTheme
 
-
-object StudentDataProvider {
-
-    val students: List<Student> = listOf(
-        Student(1,  "Akello Stellamaris", "24/2/314/01", "BIT", R.drawable.emma,  2, true),
-        Student(2,  "Kirya James",        "24/2/314/02", "BCS", R.drawable.emma,    2, false),
-        Student(3,  "Mbabazi Joan",       "24/2/314/03", "BIT", R.drawable.emma,  2, true),
-        Student(4,  "Kato Johnmary",      "24/2/314/04", "BSE", R.drawable.emma,    2, true),
-        Student(5,  "Namukasa Ritah",     "24/2/314/05", "BIT", R.drawable.emma,  2, true),
-        Student(6,  "Ssemakula Peter",    "24/2/314/06", "BCS", R.drawable.emma,    2, false),
-        Student(7,  "Namutebi Grace",     "24/2/314/07", "BSE", R.drawable.emma,  2, true),
-        Student(8,  "Lwanga Daniel",      "24/2/314/08", "BIT", R.drawable.emma,    2, false),
-        Student(9,  "Atuhaire Brenda",    "24/2/314/09", "BCS", R.drawable.emma,  2, true),
-        Student(10, "Mugisha Kevin",      "24/2/314/10", "BSE", R.drawable.emma,    2, true)
-    )
+/**
+ * MainActivity is now just a launcher.
+ * It does ONE thing: apply the theme and open AttendanceScreen.
+ *
+ * All UI logic lives in the screen and component files.
+ * If you add a second screen later, you add navigation here —
+ * you don't touch AttendanceScreen at all.
+ */
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            NdejjeWelcomeAppTheme {
+                AttendanceScreen()
+            }
+        }
+    }
 }

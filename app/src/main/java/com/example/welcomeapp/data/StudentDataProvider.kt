@@ -1,76 +1,31 @@
-// com/example/welcomeapp/data/StudentDataProvider.kt
 package com.example.welcomeapp.data
 
 import com.example.welcomeapp.R
 import com.example.welcomeapp.model.Student
 
+/**
+ * Single source of truth for all student records.
+ *
+ * companion object = Kotlin's version of Java's static.
+ * You access the list as StudentDataProvider.students
+ * without ever creating an instance with StudentDataProvider().
+ *
+ * In a real app this would be replaced by a database (Room)
+ * or a network call (Retrofit). The rest of the app would
+ * not need to change — only this file.
+ */
 object StudentDataProvider {
-    val students: List<Student> = listOf(
-        Student(
-            id = 1,
-            name = "KUUWE EMMANUEL",
-            regNo = "24/2/306/D/402",
-            course = "BSc. Computer Science",
-            photoRes = R.drawable.emma,
-            isVerified = true
-        ),
-        Student(
-            id = 2,
-            name = "NABAYA NESTROY",
-            regNo = "24/2/306/D/053",
-            course = "BSc. Computer Science",
-            photoRes = R.drawable.lot3,
-            isVerified = false
-        ),
-        Student(
-            id = 3,
-            name = "MBOINEREKU CYRUS",
-            regNo = "24/2/314/03",
-            course = "BBA – Finance",
-            photoRes = R.drawable.emma,
-            isVerified = true
-        ),
-        Student(
-            id = 4,
-            name = "WANDERA EDWIS",
-            regNo = "24/2/314/04",
-            course = "BSc. Software Engineering",
-            photoRes = R.drawable.emma,
-            isVerified = true
-        ),
-        Student(
-            id = 5,
-            name = "KABBASIITA MASIKO VICTORIA",
-            regNo = "24/2/314/05",
-            course = "BSc. INFORMATION SYSTEMS",
-            photoRes = R.drawable.emma,
-            isVerified = false
-        ),
-        Student(
-            id = 6,
-            name = "Okello Daniel",
-            regNo = "24/2/314/06",
-            course = "BBA – Accounting",
-            photoRes = R.drawable.emma,
-            isVerified = true
-        ),
-        Student(
-            id = 7,
-            name = "Namutebi Grace",
-            regNo = "24/2/314/07",
-            course = "BSc. Information Technology",
-            photoRes = R.drawable.emma
-            ,
-            isVerified = true
-        ),
-        Student(
-            id = 8,
-            name = "Mukasa Brian",
-            regNo = "24/2/314/08",
-            course = "BSc. Software Engineering",
-            photoRes = R.drawable.emma,
-            isVerified = false
-        ),
 
+    val students: List<Student> = listOf(
+        Student(1,  "Akello Stellamaris", "24/2/314/01", "BIT", R.drawable.emma,  2, true),
+        Student(2,  "Kirya James",        "24/2/314/02", "BCS", R.drawable.emma,    2, false),
+        Student(3,  "Mbabazi Joan",       "24/2/314/03", "BIT", R.drawable.emma,  2, true),
+        Student(4,  "Kato Johnmary",      "24/2/314/04", "BSE", R.drawable.emma,    2, true),
+        Student(5,  "Namukasa Ritah",     "24/2/314/05", "BIT", R.drawable.emma, 2, true),
+        Student(6,  "Ssemakula Peter",    "24/2/314/06", "BCS", R.drawable.emma,    2, false),
+        Student(7,  "Namutebi Grace",     "24/2/314/07", "BSE", R.drawable.emma,  2, true),
+        Student(8,  "Lwanga Daniel",      "24/2/314/08", "BIT", R.drawable.emma,    2, false),
+        Student(9,  "Atuhaire Brenda",    "24/2/314/09", "BCS", R.drawable.emma,  2, true),
+        Student(10, "Mugisha Kevin",      "24/2/314/10", "BSE", R.drawable.emma,    2, true)
     )
 }
